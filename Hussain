@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .welcome-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f2f2f2;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  h1 {
+    color: #646464;
+  }
+
+  p {
+    font-size: 18px;
+    color: #646464;
+  }
+
+  .info-box {
+    background-color: #176B87;
+    border-radius: 2px;
+    padding: 2px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background-color 0.3s;
+  }
+
+  .info-box:hover {
+    transform: translateY(-5px);
+    background-color: #1E9FC0;
+  }
+
+  .info-text {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .left-photo {
+    flex: 1;
+    text-align: center;
+  }
+
+  .circle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .circle {
+    width: 220px;
+    height: 220px;
+    background-color: #64CCC5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s;
+  }
+
+  .circle:hover {
+    transform: translateY(-5px);
+  }
+
+  .circle-text {
+    color: #ffffff;
+    font-size: 24px;
+    margin: 10px 0;
+  }
+
+  .additional-info {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .additional-info-text {
+    color: #646464;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rounded-border {
+    border-radius: 2px;
+    padding: 5px;
+    transition: background-color 0.3s, border-radius 0.3s;
+  }
+
+  .rounded-border:hover {
+    background-color: #64CCC5;
+    color: #fff;
+    border-radius: 10px;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #646464;
+    transition: color 0.3s;
+  }
+
+  .social-links a:hover {
+    color: #64CCC5;
+  }
+
+  .additional-info {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .additional-info-text {
+    color: #646464;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .additional-info-text span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #64CCC5;
+  }
+
+  .roles {
+    color: #04364A;
+    font-weight: 600;
+  }
+
+
+  /* Project Section Styles */
+  .projects-section {
+    background-color: #222831;
+    color: #ffffff;
+    padding: 20px;
+  }
+
+  .project-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+
+  .project-box {
+    background-color: #393E46;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-box:hover {
+    transform: translateY(-5px);
+  }
+
+  .project-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .project-link {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  /* Blog Section Styles */
+  .blog-section {
+    background-color: #ffffff;
+    padding: 20px;
+    color: #71C9CE;
+  }
+
+  .blog-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+
+  .blog-box {
+    background-color: #ffffff;
+    border: 1px solid #71C9CE;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+  }
+
+  .blog-box:nth-child(1) {
+    flex: 2;
+  }
+
+  .blog-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .blog-link {
+    text-decoration: none;
+    color: #71C9CE;
+  }
+
+  /* Connect with Me Section */
+  .connect-section {
+    background-color: #04364A;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  .email-logo {
+    font-size: 36px;
+  }
+
+  .email-text {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  /* Footer Section */
+  <style>
+  /* ... Previous CSS Rules ... */
+
+  /* Connect with Me? Section */
+  .connect-section {
+    background-color: #04364A;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  .email-logo {
+    font-size: 36px;
+  }
+
+  .email-text {
+    font-size: 20px;
+    margin-top: 10px;
+    transition: color 0.3s; /* Added hover effect */
+  }
+
+  /* Hover effect for email text */
+  .email-text:hover {
+    color: #64CCC5;
+  }
+
+  /* Footer Section */
+  .footer {
+    background-color: #04364A;
+    color: #fff;
+    text-align: center;
+    padding: 1px 0;
+  }
+</style>
+
+   
+</style>
+</head>
+<body>
+  <!-- Hamburger Menu -->
+  <div class="hamburger-container">
+    <div class="hamburger-menu" id="hamburger-menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="welcome-section" id="welcome-section">
+    <div class="container">
+      <h1>Welcome ଘ(੭ˊᵕˋ)੭* ੈ✩‧₊</h1>
+      <p>Hey There! It's <span style="color: #64CCC5;">Mohammed Hussain Abid Khan</span></p>
+      <div class="info-box">
+        <p class="info-text">UI/UX Developer <br> ▬▬ι═══════ﺤ</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="projects-section">
+    <div class="left-photo">
+      <div class="circle-container">
+        <div class="circle">
+          <p class="circle-text">G.H.O.S.T <br> ੈ♡‧₊</p>
+        </div>
+      </div>
+    </div>
+    <div class="right-content">
+      <h2>Mohammed Hussain Abid Khan</h2>
+     <p class="roles">˗ˏˋ ★ ˎˊ˗ Guider, Designer, Blogger ˗ˏˋ ★ ˎˊ˗</p>
+      <div class="additional-info">
+        <p class="rounded-border"> ✩°｡  Age: 21</p>
+        <p class="rounded-border"> ✩°｡  Hobby: Designing and Sketching</p>
+        <p class="rounded-border">✩°｡  Born: Saudi Arabia, Riyadh</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/mohammed-hussain-abid-khan-47a480252/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BXax8iJ%2BKQ56np%2FlcIA4wyA%3D%3D" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/your-github-profile" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-section">
+    <p>Projects ★⌒ヽ(´ ❥ `)</p>
+    <div class="project-boxes">
+      <div class="project-box project-box1">
+        <p class="project-title">Website Design: HackEnvision'23</p>
+      
+        <a class="project-link" href="https://www.figma.com/file/YAv2c3XZ3IDSv5JK7KocSl/HackEnvision?node-id=0%3A1&t=FWpJOvhdm6kyylzo-1" target="_blank">View</a>
+      </div>
+      <div class="project-box project-box2">
+        <p class="project-title">App Design_1: NSAKCET Mobile App UI</p>
+     
+        <a class="project-link" href="https://www.figma.com/file/TRH5VwpfRkYCGlSue3opeE/College?node-id=0%3A1&t=FWpJOvhdm6kyylzo-1" target="_blank">View</a>
+      </div>
+    </div>
+    <div class="project-boxes">
+      <div class="project-box project-box3">
+        <p class="project-title">App Design_2: FizzFinder Mobile App UI</p>
+
+        <a class="project-link" href="https://www.figma.com/file/RGARIJDPOBWNXarTxwr7ZY/FIZZFINDER?type=design&t=80N255t0qORKmXPO-6" target="_blank">View</a>
+      </div>
+      <div class="project-box project-box4">
+        <p class="project-title">Logo Design: ELEVATE</p>
+        <a class="project-link" href="https://www.figma.com/file/qztSP2AOHV5W2hlAzHias2/Untitled" target="_blank">View</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="blog-section">
+    <div class="blog-boxes">
+      <div class="blog-box">
+        <p class="blog-title">AceYourStudies:O.U[B.E]-1st Year Blog</p>
+  
+        <a class="blog-link" href="https://mohammedhussainabidkhan.blogspot.com/2023/06/aceyourstudies-oube-notes-importants.html" target="ace">Read More</a>
+      </div>
+      <div class="blog-box">
+        <p class="blog-title">Signal and System Blog</p>
+     
+        <a class="https://signalandsystemoutipsandtricks.blogspot.com/2023/06/blog-post.html" href "your-blog-link2" target="_blank">Read More</a>
+      </div>
+     
+    </div>
+  </div>
+
+  <!-- Connect with Me? Section -->
+  <div class="connect-section">
+    <i class="fas fa-envelope email-logo"></i>
+    <p class="email-text">mohammedhussainguider@gmail.com</p>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="footer">
+    Website made by Mohammed Hussain Abid Khan<br>
+    Love You Mom[☾⋆｡ 𖦹 °✩]
+  </div>
+</body>
+</html>
